@@ -26,7 +26,7 @@
 
 ### Project Details
 
-- Developed by == Naina Thakre ==
+- Developed by **Naina Thakre**
 
 
 
