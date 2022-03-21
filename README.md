@@ -23,19 +23,19 @@
 ### UI pages & screenshots
 
 - Sign up page - http://localhost:3000/register
-![Signup page](public/screenshots/signup.png)
+![Signup page](public/screenshots/signin.PNG)
 
 - Sign in page - http://localhost:3000/login (Credentials: naina@gmail.com, ecomm@123)
-![Signin page](public/screenshots/signin.png)
+![Signin page](public/screenshots/signin.PNG)
 
 - Offers page -  http://localhost:3000/
-![Offers page](public/screenshots/offers.png)
+![Offers page](public/screenshots/offers.PNG)
 
 - Products page -  http://localhost:3000/products
-![Products page](public/screenshots/products.png)
+![Products page](public/screenshots/products.PNG)
 
 - Cart page -  http://localhost:3000/cart 
-![Cart page](public/screenshots/cart.png)
+![Cart page](public/screenshots/cart.PNG)
 
 
 
