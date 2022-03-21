@@ -35,7 +35,7 @@
 ![Products page](public/screenshots/products.PNG)
 
 - Cart page -  http://localhost:3000/cart 
-![Cart page](public/screenshots/cart.PNG)
+![Cart page](public/screenshots/cart1.PNG)
 
 - Checkout page -  http://localhost:3000/checkout 
 ![Checkout page](public/screenshots/checkout.PNG)
