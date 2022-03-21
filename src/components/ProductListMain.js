@@ -7,7 +7,7 @@ function ProductListMain({ categoryId = null }) {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    const { REACT_APP_PRODUCTS_URL = 'localhost:5000/products' } = process.env;
+    const { REACT_APP_PRODUCTS_URL = 'http://localhost:5000/products' } = process.env;
     axios.get(REACT_APP_PRODUCTS_URL).then(response => {
       if(categoryId) {
         const products = response.data.filter(element => element.category === categoryId);
@@ -19,9 +19,14 @@ function ProductListMain({ categoryId = null }) {
   }, [categoryId]);
 
   const addToCart = (product) => {
-    product.qty = 1;
     const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
-    existingCart.push(product);
+    const productIndex = existingCart.findIndex(prod => prod.id === product.id);
+    if (productIndex > -1) {
+      existingCart[productIndex].qty = existingCart[productIndex].qty + 1;
+    } else {
+      product.qty = 1;
+      existingCart.push(product);
+    }
     sessionStorage.setItem('cart', JSON.stringify(existingCart));
     navigate('/cart');
   };

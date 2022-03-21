@@ -25,7 +25,7 @@ function ProductListContainer(props) {
     }
     window.addEventListener('resize', handleResize);
 
-    const { REACT_APP_CATEGORIES_URL = 'localhost:5000/categories' } = process.env;
+    const { REACT_APP_CATEGORIES_URL = 'http://localhost:5000/categories' } = process.env;
     axios.get(REACT_APP_CATEGORIES_URL).then(response => {
       let { data } = response;
       data = data.sort(function(a, b) {

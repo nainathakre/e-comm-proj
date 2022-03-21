@@ -48,7 +48,7 @@ function Menu() {
               alt="cart icon"
               className="cart-icon"
             />{' '}
-            0 items
+            <Link to='/cart'>{JSON.parse(sessionStorage.getItem('cart')).length} items</Link>
           </li>
         </ul>
       </ul>

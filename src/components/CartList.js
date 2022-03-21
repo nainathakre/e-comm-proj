@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CartItem from './CartItem';
 
 function CartList() {
   const [cartList, setCartList] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let productsInCart = sessionStorage.getItem('cart');
@@ -79,7 +81,7 @@ function CartList() {
                 <h4>No items in your cart</h4>
                 <p>Your favorite items are just a click away</p>
               </section>
-              <button>
+              <button onClick={() => navigate('/products')}>
                 Start shopping
               </button>
             </>
@@ -93,7 +95,7 @@ function CartList() {
         </section>
 
         <button 
-          style={{ marginTop: "20px", padding: "10px 15px", background: "#ad4747", color: "#fff", border: "none", outline: "none", borderRadius: "3px", cursor: "pointer"}}>
+          style={{ marginTop: "20px", padding: "10px 15px", background: "#a20c5a", color: "#fff", border: "none", outline: "none", borderRadius: "3px", cursor: "pointer", width: "100%", marginLeft: "10px", marginRight: "10px" }}>
           Proceed to Checkout Rs.{getTotal()} 
         </button>
       </section>

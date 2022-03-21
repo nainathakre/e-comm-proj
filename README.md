@@ -3,30 +3,39 @@
 ### Features 
 
 - Responsive UI
-
 - Log in & Register
-
 - Categories Listing
-
 - Products Listing
-
 - Filtering of products by categories
-
-- Cart 
+- Cart
 
 ### Local set up
 
 - Clone the repo
-
 - Install dependencies using `npm install`
-
 - Run the project using `npm start`
-
-- Open `localhost:3000` for UI, `localhost:5000` for api server
+- Open `http://localhost:3000` for UI, `http://localhost:5000` for api server
 
 ### Project Details
 
 - Developed by **Naina Thakre**
+
+### UI pages & screenshots
+
+- Sign up page - http://localhost:3000/register
+![Signup page](public/screenshots/signup.png)
+
+- Sign in page - http://localhost:3000/login (Credentials: naina@gmail.com, ecomm@123)
+![Signin page](public/screenshots/signin.png)
+
+- Offers page -  http://localhost:3000/
+![Offers page](public/screenshots/offers.png)
+
+- Products page -  http://localhost:3000/products
+![Products page](public/screenshots/products.png)
+
+- Cart page -  http://localhost:3000/cart 
+![Cart page](public/screenshots/cart.png)
 
 
 
