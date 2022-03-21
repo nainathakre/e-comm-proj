@@ -7,6 +7,13 @@ function Menu() {
     sessionStorage.removeItem('isLoggedIn');
     navigate('/login');
   }
+  const getCartCount = () => {
+    const cart = sessionStorage.getItem('cart');
+    if (cart) {
+      return JSON.parse(cart).length;
+    }
+    return 0;
+  }
   return (
     <div className="menu-container">
       <ul className="left-side-menu">
@@ -48,7 +55,7 @@ function Menu() {
               alt="cart icon"
               className="cart-icon"
             />{' '}
-            <Link to='/cart'>{JSON.parse(sessionStorage.getItem('cart')).length} items</Link>
+            <Link to='/cart'>{getCartCount()} items</Link>
           </li>
         </ul>
       </ul>

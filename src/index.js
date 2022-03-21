@@ -6,6 +6,7 @@ import Login from './Login';
 import Register from './Register';
 import ProductList from './ProductList';
 import Cart from './Cart';
+import Checkout from './Checkout';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -16,6 +17,7 @@ ReactDOM.render(
       <Route path="/products" element={<ProductList />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/products/:category" element={<ProductList />} />
+      <Route path="/checkout" element={<Checkout />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

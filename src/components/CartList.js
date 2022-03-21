@@ -58,10 +58,10 @@ function CartList() {
             "textAlign": "center"
             }}>
             <section>
-              <h4>No items in your cart</h4>
-              <p>Your favorite items are just a click away</p>
+              <h4 style={{ marginBottom: '10px' }}>No items in your cart</h4>
+              <p style={{ marginBottom: '20px' }}>Your favorite items are just a click away</p>
             </section>
-            <button style={{ background: "red", color: "#fff", padding: "10px 15px", borderRadius: "4px", cursor: "pointer", outline: "none", "border": "none" }}>
+            <button style={{ background: "#a20c5a", color: "#fff", padding: "10px 15px", borderRadius: "4px", cursor: "pointer", outline: "none", "border": "none" }}>
               Start shopping
             </button>
           </div>
@@ -75,17 +75,6 @@ function CartList() {
       <section className='cart-container'>
         <section className='cart-heading'>
           <h2>My Cart</h2> &nbsp;
-          {cartList.length === 0 && (
-            <>
-              <section>
-                <h4>No items in your cart</h4>
-                <p>Your favorite items are just a click away</p>
-              </section>
-              <button onClick={() => navigate('/products')}>
-                Start shopping
-              </button>
-            </>
-          )}
           <p>(<span>{cartList.length}</span> item{cartList.length > 1 ? 's' : ''})</p>
         </section>
         <section>
@@ -95,6 +84,7 @@ function CartList() {
         </section>
 
         <button 
+          onClick={navigate('/checkout')}
           style={{ marginTop: "20px", padding: "10px 15px", background: "#a20c5a", color: "#fff", border: "none", outline: "none", borderRadius: "3px", cursor: "pointer", width: "100%", marginLeft: "10px", marginRight: "10px" }}>
           Proceed to Checkout Rs.{getTotal()} 
         </button>
