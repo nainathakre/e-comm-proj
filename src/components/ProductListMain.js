@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { shorten } from '../utilities';
 
 function ProductListMain({ categoryId = null }) {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const { REACT_APP_PRODUCTS_URL = 'localhost:5000/products' } = process.env;
     axios.get(REACT_APP_PRODUCTS_URL).then(response => {
@@ -15,6 +17,14 @@ function ProductListMain({ categoryId = null }) {
       }
     }).catch(error => console.error(error));
   }, [categoryId]);
+
+  const addToCart = (product) => {
+    product.qty = 1;
+    const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    existingCart.push(product);
+    sessionStorage.setItem('cart', JSON.stringify(existingCart));
+    navigate('/cart');
+  };
 
   if (products.length === 0) return null;
 
@@ -58,8 +68,8 @@ function ProductListMain({ categoryId = null }) {
             </section>
             <div className="price-cta-section hide-on-mobile">
               <span className="hide-on-tablet">MRP Rs.{price}</span>
-              <button className="hide-on-tablet">Buy Now</button>
-              <button className="hide-on-desktop">Buy Now @ MRP Rs.{price}</button>
+              <button className="hide-on-tablet" onClick={() => addToCart(product)}>Buy Now</button>
+              <button className="hide-on-desktop" onClick={() => addToCart(product)}>Buy Now @ MRP Rs.{price}</button>
             </div>
           </section>
         );

@@ -68,6 +68,10 @@ p {
 .right-side-menu-cart-info {
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+.right-side-menu-cart-info:hover {
+  text-decoration: underline;
 }
 /* Menu styling ends */
 
@@ -302,6 +306,7 @@ p {
 }
 .cart-item-details {
   align-self: center;
+  padding-left: 10px;
 }
 .cart-item-details > h4 {
   font-size: 14px;
