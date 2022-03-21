@@ -56,7 +56,7 @@ function ProductListMain({ categoryId = null }) {
                 <p>
                   {desc}
                 </p>
-                <button>Buy Now @ MRP Rs.{price}</button>
+                <button onClick={() => addToCart(product)}>Buy Now @ MRP Rs.{price}</button>
               </section>
             </section>
             <p className="hide-on-tablet hide-on-mobile">
